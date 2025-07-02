@@ -1,0 +1,138 @@
+@import './base.css';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+
+/* アプリケーション全体のスタイル */
+#app {
+  font-family: 'Noto Sans JP', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+}
+
+/* プリント用のスタイル */
+@media print {
+  .monster-card {
+    page-break-inside: avoid;
+    box-shadow: none !important;
+  }
+}
+
+/* 画像出力用のスタイル調整 */
+.monster-card {
+  /* html2canvasでの正確なレンダリングのため */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  line-height: 1.2;
+}
+
+/* 行間を狭める */
+.monster-card * {
+  line-height: 1.2;
+  margin-bottom: 0;
+}
+
+.monster-card .text-xs {
+  line-height: 1.1;
+}
+
+.monster-card .grid > div {
+  line-height: 1.1;
+  margin-bottom: 1px;
+}
+
+/* テーブルのスタイル調整 */
+.monster-card table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  line-height: 1.1;
+}
+
+.monster-card table th,
+.monster-card table td {
+  border: 1px solid #374151;
+  box-sizing: border-box;
+  line-height: 1.1;
+  padding: 2px 4px;
+}
+
+/* セクション間の余白を狭める */
+.monster-card .mb-2 {
+  margin-bottom: 0.25rem;
+}
+
+.monster-card .mt-2 {
+  margin-top: 0.25rem;
+}
+
+.monster-card .pt-2 {
+  padding-top: 0.25rem;
+}
+
+.monster-card .pb-2 {
+  padding-bottom: 0.25rem;
+}
+
+.monster-card .p-2 {
+  padding: 0.25rem;
+}
+
+/* セクションヘッダーのスタイル */
+.section-header {
+  font-size: 0.875rem;
+  color: #1f2937;
+  line-height: 1.1;
+  margin-bottom: 0.125rem;
+}
+
+/* 画像出力時のフォント調整 */
+.monster-card * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* 特殊能力、戦利品、解説セクションの行間調整 */
+.monster-card .whitespace-pre-line {
+  line-height: 1.2;
+}
+
+/* テーブル内のセル間隔を最小化 */
+.monster-card tbody tr {
+  line-height: 1.1;
+}
+
+.monster-card tbody td {
+  vertical-align: top;
+  padding: 1px 3px;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+
+  #app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+  }
+}

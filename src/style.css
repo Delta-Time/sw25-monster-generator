@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+
+@theme {
+  --font-noto: "Noto Sans JP", sans-serif;
+  --color-sw-gray-800: #2d2d2d;
+  --color-sw-gray-900: #1a1a1a;
+}
+
+/* 全体の文字色を濃く */
+body {
+  color: #1a1a1a;
+}
+
+/* 印刷用スタイル */
+.monster-card {
+  @apply bg-white border-2 border-black;
+  font-size: 12px;
+  line-height: 1.3;
+  page-break-inside: avoid;
+  font-family: var(--font-noto);
+  width: 400px !important;
+  max-width: 100%;
+  color: #000;
+}
+
+.monster-header {
+  background-color: var(--color-sw-gray-800);
+  @apply text-white p-2 text-center;
+  border-radius: 0;
+}
+
+.monster-name {
+  @apply text-lg font-bold;
+}
+
+.monster-stats-table {
+  @apply w-full border-collapse;
+  table-layout: fixed;
+}
+
+.monster-stats-table th,
+.monster-stats-table td {
+  @apply border border-black px-1 py-1 text-center text-xs;
+  color: #000;
+}
+
+.monster-stats-table th {
+  @apply bg-gray-200 font-bold;
+}
+
+.section-header {
+  background-color: var(--color-sw-gray-800);
+  @apply text-white font-bold text-sm p-1;
+}
+
+.ability-box {
+  @apply border border-black p-2 bg-gray-50;
+}
+
+/* フォーム要素の色を濃く */
+input, select, textarea {
+  color: #1a1a1a !important;
+}
+
+label {
+  color: #1a1a1a !important;
+}
